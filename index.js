@@ -29,3 +29,16 @@
 // }
 // readFile();
 // exo 3
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/search', (req, res) => {
+    const queryValue = req.query.q;
+    res.json({ query: queryValue });
+});
+
+app.listen(port, () => {
+    console.log(`Serveur démarré sur http://localhost:${port}`);
+});
+
